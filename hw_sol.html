@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>HW solution</title>
+</head>
+
+<body>
+    <script>
+
+        // Targil 1
+        function is_equal(num1 = 0, num2 = 0) {
+            // if (num1 === num2) {
+            //     return true
+            // }
+            // else {
+            //     return false
+            // }
+
+            // return  (num1 === num2) ? true : false
+            return num1 === num2
+        }
+
+        // Targil 2
+        //function smallest(a, b = Number.MAX_SAFE_INTEGER, c = Number.MAX_SAFE_INTEGER) {
+        function smallest(a, b, c) {
+            if (a < b && a < c) {
+                return a
+            }
+            if (b < c) {
+                return b
+            }
+            else {
+                return c
+            }
+
+            return a < b && a < c ? a : b < c ? b : c
+        }
+
+        // Targil 3
+        function multi_print(word = "sesamie", times = 1) {
+            for (let i = 1; i <= times; i++) {
+                document.write(word)
+            }
+            document.write(" <br />")
+        }
+
+        // Targil 4
+        function get_longer(str1, str2) {
+            if (str1.length > str2.length)
+                return str1
+            else
+                return str2
+
+            return str1.length > str2.length ? str1 : str2
+        }        
+
+        // Targil 5
+        function factorial(f = 1) {
+
+            // f = 5
+            // result = 1            
+            // i = 2            
+            // result = 1 * 2 = 2
+            // i = 3
+            // result = 2 * 3 = 6
+            // i = 4
+            // result = 6 * 4 = 24
+            // i = 5
+            // result = 24 * 5 = 120
+            let result = 1
+            for (let i = 2; i <= f; i++) {
+                result *= i
+            }
+            return result
+
+            // without indexer (reshut)
+            // let fact = 1
+            // f = 5 
+            // fact = 1 * 5 = 5
+            // f = 4
+            // fact = 5 * 4 = 20
+            // f = 3
+            // fact = 20 * 3 = 60
+            // f = 2
+            // fact = 60 * 2 = 120
+            // f = 1
+            // fact = 120 * 1 = 120
+            //for (; f >= 1; f--) {
+                //fact *= f
+            //}
+            //return fact
+        }
+
+        document.write("1 == 1 ? ", is_equal(1, 1), "<br />")
+        document.write("1 == 2 ? ", is_equal(1, 2), "<br />")
+        document.write("smallest 5, 9, -2 ? ", smallest(5, 9, -2), "<br />")
+        document.write("smallest ... ? ", smallest(), "<br />")
+        multi_print()
+        multi_print("java", 3)
+        document.write("'avi', 'danny' ? longer == ", get_longer('avi', 'danny'), "<br />")
+        document.write("facorial(0) ... ? ", factorial(0), "<br />")
+        document.write("facorial(1) ... ? ", factorial(), "<br />")
+        document.write("facorial(5) ... 1*2*3*4*5*? ", factorial(5), "<br />")
+    </script>
+</body>
+
+</html>
