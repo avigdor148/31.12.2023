@@ -9,12 +9,37 @@
     <script>
 
         // calculate average for the class
-        // input numbers 
+        // input grades
         // if given -99  exit the loop
         // if the grade was < 0 or > 100 ignore the grade
         // *bonus: if the grade was zero 3 times in a row then exit the loop
         // print the average
-        
+        let sum = 0
+        let students = 0
+        let zero_count = 0
+        while (true) {
+            let grade = parseInt(prompt('enter grade: [-99 to exit]'))
+            if (grade == -99) {
+                break
+            }
+            if (grade == 0) {
+                zero_count++
+                if (zero_count == 3) {
+                    break
+                }
+            }
+
+            if (grade < 0 || grade > 100) {
+                continue
+            }
+
+            if (grade > 0) {
+                zero_count = 0
+            }
+            sum += grade
+            students++
+        }
+        const avg = sum / students
 
     </script>
 </body>
